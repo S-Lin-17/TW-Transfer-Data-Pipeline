@@ -34,28 +34,29 @@ def main():
         1: "Evening", 
         3: "Intraday 1", 
         4: "Intraday 2", 
-        7: "intraday 3", 
+        7: "Intraday 3", 
         5: "Final"
     }
 
-    # Get data from last 3 days
-    for i in range(1, 2):
+    # Get data from last 3 days (excluding today)
+    for i in range(1, 4):
         gas_day = today - timedelta(days=i)
 
         for cycle in cycles:
             try:
                 print(f"Processing data from cycle {cycles[cycle]} for {gas_day}")
                 csv_content = download_csv(gas_day, cycle)
+                cycle_date = f"{gas_day.strftime('%Y%m%d')}_cycle-{cycles[cycle]}"
                 
                 # Save csv file in data folder (TODO: delete after connection is created)
-                file_name = f"{gas_day.strftime('%Y%m%d')}_cycle-{cycles[cycle]}.csv"
+                file_name = cycle_date + ".csv"
                 os.makedirs("data", exist_ok=True)
                 file_path = os.path.join("data", file_name)
                 with open(file_path, "wb") as f:
                     f.write(csv_content)
                 
                 # Validate data
-                df = validate.validate_data(csv_content)
+                df = validate.validate_data(csv_content, cycle_date)
                 # TODO: delete after connection is created
                 if df is not None: 
                     print(f"Data is valid")
