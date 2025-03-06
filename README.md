@@ -1,6 +1,6 @@
 # TW-Transfer-Data-Pipeline
 
-This small project downloads, parses, validates, and inserts natural gas shipment data from Transwestern Pipeline Company, LLC into a PostgreSQL database. More specifically 
+This small project downloads, parses, validates, and inserts natural gas shipment data from the previous 3 days (excluding the current day) from Transwestern Pipeline Company, LLC into a local PostgreSQL database.
 
 ## How to run this project
 
