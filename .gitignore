@@ -1,5 +1,6 @@
 *.txt
 *.csv
+secrets.sh
 secrets.json
 !requirements.txt
 !sample_02-27-2025_Intraday 3.csv
