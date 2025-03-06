@@ -4,8 +4,6 @@ This small project downloads, parses, validates, and inserts natural gas shipmen
 
 ## How to run this project
 
-TODO (python download, ide / terminal (?), postgresql download (?), pip installs)
-
 1. Install Python 3 if not already done.
 
 2. Clone this repository and open the terminal to its file location.

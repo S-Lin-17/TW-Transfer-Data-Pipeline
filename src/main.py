@@ -10,6 +10,13 @@ import validate
     
 def main():  
 
+    try:
+        subprocess.run(["pip", "install", "-r", "requirements.txt"], check=True)
+        print("Requirements installed successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error installing requirements: {e}")
+        return
+
     # # Create local db if it doesn't exist
     try:
         subprocess.run(["bash", "./create_db.sh"], check=True)
