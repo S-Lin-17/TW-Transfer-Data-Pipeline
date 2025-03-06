@@ -28,3 +28,5 @@ def insert_data(df, connection):
         )
     
     connection.commit()
+
+    return cursor
