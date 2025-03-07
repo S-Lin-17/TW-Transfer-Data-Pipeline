@@ -56,12 +56,12 @@ def main():
                     csv_content = download_data.download_csv(gas_day, cycle)
                     cycle_date = f"{gas_day.strftime('%Y%m%d')}_cycle-{cycles[cycle]}"
                     
-                    # Save csv file in data folder (TODO: delete after connection is created)
-                    file_name = cycle_date + ".csv"
-                    os.makedirs("data", exist_ok=True)
-                    file_path = os.path.join("data", file_name)
-                    with open(file_path, "wb") as f:
-                        f.write(csv_content)
+                    # Save csv file in data folder (for testing)
+                    # file_name = cycle_date + ".csv"
+                    # os.makedirs("data", exist_ok=True)
+                    # file_path = os.path.join("data", file_name)
+                    # with open(file_path, "wb") as f:
+                    #     f.write(csv_content)
                     
                     # Validate data
                     df = validate.validate_data(csv_content, cycle_date)
